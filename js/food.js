@@ -130,6 +130,7 @@ function getFoodAveragePM25(dateString, startString, endString) {
 }
 
 function showPM25() {
+    console.log("SHOW PM25")
     var table = document.getElementById("foodTable");
     for (var i = 0, row; row = table.rows[i]; i++) {
         for (var j = 0, col; col = row.cells[j]; j++) {
