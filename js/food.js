@@ -52,6 +52,8 @@ function updateFoodTable() {
         let responseObj = xhr.response;
         let arr = responseObj.feeds;
 
+        console.log("ARR", arr.length)
+
         let tb = document.getElementById("foodTable")
 
         //Remove all table row on update (redo)
