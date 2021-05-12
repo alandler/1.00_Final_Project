@@ -16,7 +16,16 @@ function postFood() {
     }
 };
 
+function convertMilitary(t){
+    if (t.includes("AM")||t.includes("PM")) {
+        return false
+    } else {
+        return true
+    }
+}
+
 function getFoodFormData() {
+    console.log("Form Data")
     let foodDate = document.getElementById("foodDate").value;
     let foodStart = document.getElementById("foodStart").value;
     let foodEnd = document.getElementById("foodEnd").value;
