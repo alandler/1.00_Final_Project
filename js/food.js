@@ -44,6 +44,7 @@ function getFoodFormData() {
 }
 
 function updateFoodTable() {
+    console.log("Update food table")
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://api.thingspeak.com/channels/1377715/feeds.json?results=' + numFoods)
     xhr.responseType = 'json';

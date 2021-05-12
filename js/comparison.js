@@ -17,14 +17,12 @@ form.addEventListener('submit', handleForm);
 function setCities(){
     let n = document.getElementById("comparisonInput").value
     let topCities = getClosest(n).sort((a, b) => (a["PM2.5         Wtd AM (ug/m3)"] > b["PM2.5         Wtd AM (ug/m3)"]) ? 1 : -1)
-    console.log(topCities[0])
 
     //Select table
     let tb = document.getElementById("outputTable")
     while (tb.firstChild) {
         tb.removeChild(tb.firstChild);
     }
-    console.log(tb)
 
     let thead = tb.createTHead()
     let headRow = thead.insertRow()
@@ -40,11 +38,6 @@ function setCities(){
     headRow.appendChild(locHead)
     headRow.appendChild(pmHead)
 
-    console.log(tb)
-
-    //Check row
-    console.log(headRow)
-
     for (let i = 0; i<topCities.length; i++){
         let row = document.createElement("tr")
         let name = document.createElement("td")
@@ -56,5 +49,3 @@ function setCities(){
         tb.appendChild(row)
     }    
 }
-
-console.log(getClosest(9))
