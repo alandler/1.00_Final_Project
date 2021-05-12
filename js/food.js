@@ -76,7 +76,7 @@ function updateFoodTable() {
         let headRow = thead.insertRow()
 
         //Set header row labels
-        let headerLabels = ["Date", "Start Time", "End Time", "Food", "Notes"]//, "PM2.5"]
+        let headerLabels = ["Date", "Start Time", "End Time", "Food", "Notes", "PM2.5"]
 
         for (let h in headerLabels) {
             let th = document.createElement("th")
@@ -99,12 +99,29 @@ function updateFoodTable() {
             // await getFoodAveragePM25(arr[i]["field2"], arr[i]["field3"], arr[i]["field4"]).then(console.log("HELLO"))
             tb.appendChild(r)
         }
+
+        showPM25()
     }
 };
 
 updateFoodTable()
 
-function getFoodAveragePM25(dateString, startString, endString) {
+function showPM25() {
+    console.log("SHOW PM25")
+    var table = document.getElementById("foodTable");
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        // for (var j = 0, col; col = row.cells[j]; j++) {
+        //     console.log(col)
+        // }
+        // console.log(row.cells[0].innerHTML)
+        let avg = getFoodAveragePM25(row.cells[0].innerHTML, row.cells[1].innerHTML, row.cells[2].innerHTML, i)
+        // let cell = document.createElement("td")
+        // cell.innerHTML = avg
+        // row.appendChild()
+    }
+}
+
+function getFoodAveragePM25(dateString, startString, endString, i=0) {
     //Format: YYYY-MM-DD%20HH:NN:SS.
     return new Promise(function (resolve, reject) {
         let start = dateString.substring(6) + "-" + dateString.substring(0, 5) + "%20" + startString + ":00"
@@ -122,20 +139,14 @@ function getFoodAveragePM25(dateString, startString, endString) {
             let nums = responseObj.feeds.map((obj) => parseFloat(obj['field5']));
             let mean = (nums.reduce((a, b) => a + b, 0) / nums.length).toFixed(3)
             console.log("Mean: ", mean)
+            
+            var table = document.getElementById("foodTable");
+            let cell = document.createElement("td")
+            cell.innerHTML=mean
+            table.rows[i].appendChild(cell)
+
             return resolve(mean)
             // return mean
         }
     })
 }
-
-function showPM25() {
-    console.log("SHOW PM25")
-    var table = document.getElementById("foodTable");
-    for (var i = 0, row; row = table.rows[i]; i++) {
-        for (var j = 0, col; col = row.cells[j]; j++) {
-            console.log(col)
-        }
-    }
-}
-
-showPM25()
