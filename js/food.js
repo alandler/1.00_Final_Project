@@ -16,8 +16,8 @@ function postFood() {
     }
 };
 
-function convertMilitary(t){
-    if (t.includes("AM")||t.includes("PM")) {
+function convertMilitary(t) {
+    if (t.includes("AM") || t.includes("PM")) {
         return false
     } else {
         return true
@@ -87,7 +87,7 @@ function updateFoodTable() {
 
         for (let i = 0; i < arr.length; i++) {
             console.log(arr[i]['field2'])
-            if (!arr[i]['field2']){
+            if (!arr[i]['field2']) {
                 continue
             }
             let r = document.createElement("tr")
@@ -128,3 +128,14 @@ function getFoodAveragePM25(dateString, startString, endString) {
         }
     })
 }
+
+function showPM25() {
+    var table = document.getElementById("foodTable");
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            console.log(col)
+        }
+    }
+}
+
+showPM25()
