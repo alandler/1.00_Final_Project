@@ -35,8 +35,11 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.html">Air Chef</a> <!--#page-top-->
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">Air Chef</a>
+      <!--#page-top-->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
@@ -45,7 +48,7 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="live-data.html">Live Data</a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="analysis-page.html">Analysis</a>
           </li>
@@ -53,10 +56,10 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="comparison-page.html">Comparison</a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="food.html">Food Log</a>
-        </li>
+          </li>
         </ul>
       </div>
     </div>
@@ -66,41 +69,43 @@
   <section class="masthead text-center" style="height:25vh">
     <div class="container h-25">
       <div class="row">
-        <div class="col-md-8 mx-auto" style = "height:70vh">
+        <div class="col-md-8 mx-auto" style="height:70vh">
           <h2 class="section-heading">Comparison: Cooking vs Pollution</h2>
           <p>See how your PM2.5 levels compare with outdoor pollution in US cities!
           </p>
         </div>
       </div>
     </div>
-</section>
+  </section>
 
-<section class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class = "col 3 comparisonInput">
-        <form onsubmit="setCities()" id = "comparisonForm">
-          <label for="PM">Choose a PM 2.5 Level (&#956g):</label>
-          <input type = "number" step="0.01" id = "comparisonInput"/> <br><br>
-          <input type="submit" value="Submit" class="submit">
-        </form>
-      </div>
-      <div class = "col 9 comparisonOutput">
-        <table class = "table" id = "outputTable"></table>
+  <section class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col 3 comparisonInput">
+          <form onsubmit="setCities()" id="comparisonForm">
+            <label for="PM">Choose a PM 2.5 Level (&#956g):</label>
+            <input type="number" step="0.01" id="comparisonInput" /> <br><br>
+            <input type="submit" value="Submit" class="submit">
+          </form>
+        </div>
+        <div class="col 9 comparisonOutput">
+          <table class="table" id="outputTable"></table>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<iframe id="floatingIndicator" width="450" height="260" frameborder="0" style="border: 2px solid #858585;-webkit-transform:scale(0.3);-moz-transform-scale(0.3);" src="https://thingspeak.com/channels/1377715/widgets/309424"></iframe>
-  
+  <iframe id="floatingIndicator" width="450" height="260" frameborder="0"
+    style="border: 2px solid #858585;-webkit-transform:scale(0.3);-moz-transform-scale(0.3);"
+    src="https://thingspeak.com/channels/1377715/widgets/309424"></iframe>
 
-<footer>
-  <div class="container">
-    <p>&copy; AirChef 2021. All Rights Reserved.</p>
-  </div>
-</footer>
+
+  <footer>
+    <div class="container">
+      <p>&copy; AirChef 2021. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 
   <!-- Bootstrap core JavaScript -->

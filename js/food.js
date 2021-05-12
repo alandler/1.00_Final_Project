@@ -74,6 +74,7 @@ function updateFoodTable() {
         }
 
         for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]['field2'])
             if (!arr[i]['field2']){
                 continue
             }
