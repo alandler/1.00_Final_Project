@@ -74,6 +74,9 @@ function updateFoodTable() {
         }
 
         for (let i = 0; i < arr.length; i++) {
+            if (!arr[i]['field2']){
+                continue
+            }
             let r = document.createElement("tr")
             //Normal headers
             for (let j = 2; j <= 6; j++) {
